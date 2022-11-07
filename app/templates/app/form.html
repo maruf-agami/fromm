@@ -37,27 +37,34 @@
     <div class="container" style="height: 900px">
       <form id="examForm" method="post">
         {% csrf_token %}
-        <h4>Academic Information</h4>
+        <h3>Academic Information</h3>
         <div class="row">
-          <div class="col-4">
+          <!-- old one -->
+          <!-- <div class="col-4">
             <div class="input-group mb-3">
               <input
                 type="text"
                 class="form-control"
-                placeholder="হল"
+                placeholder="Hall"
                 name="hall"
                 aria-describedby="basic-addon1"
                 required
                 id="id_hall"
               />
             </div>
-          </div>
+          </div> -->
+
+          <!-- new one -->
           <div class="col-4">
             <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"
+                  >Student ID</span
+                >
+              </div>
               <input
                 type="text"
                 class="form-control"
-                placeholder="শ্রেণী রোল নং"
                 aria-describedby="basic-addon1"
                 name="student_id"
                 maxlength="200"
@@ -66,85 +73,115 @@
               />
             </div>
           </div>
+
           <div class="col-4">
             <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Semester</span>
+              </div>
               <input
                 type="text"
                 class="form-control"
-                placeholder="শিক্ষাবর্ষ"
-                name="session"
-                aria-describedby="basic-addon1"
-              />
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="input-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="BSc. Subject"
-                name="subject"
-                aria-describedby="basic-addon1"
-              />
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="input-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Exam Year"
-                name="examYear"
-                aria-describedby="basic-addon1"
-              />
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="input-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Semester"
                 name="semester"
                 aria-describedby="basic-addon1"
+                maxlength="50"
+                required
+                id="id_semester"
+              />
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Session</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="session"
+                aria-describedby="basic-addon1"
+                maxlength="50"
+                required
+                id="id_session"
+              />
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Hall</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="hall"
+                aria-describedby="basic-addon1"
+                required
+                id="id_hall"
+              />
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"
+                  >Department</span
+                >
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="department"
+                aria-describedby="basic-addon1"
+                maxlength="200"
+                required
+                id="id_department"
               />
             </div>
           </div>
           <div class="col-4">
             <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"
+                  >Exam Year</span
+                >
+              </div>
               <input
                 type="text"
                 class="form-control"
-                placeholder="Last Semester Passing Year"
-                name="lastSemPassYear"
+                name="exam_year"
                 aria-describedby="basic-addon1"
+                maxlength="50"
+                required
+                id="id_exam_year"
               />
             </div>
           </div>
+
           <div class="col-4">
             <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"
+                  >Exam starting date</span
+                >
+              </div>
               <input
                 type="text"
                 class="form-control"
-                placeholder="Last Semester Result"
-                name="lastSemResult"
+                name="exam_starting_date"
                 aria-describedby="basic-addon1"
-              />
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="input-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Exam starting date"
-                name="examStartDate"
-                aria-describedby="basic-addon1"
+                maxlength=""
+                required
+                id="id_exam_starting_date"
               />
             </div>
           </div>
         </div>
-        <h4>Course Codes:</h4>
+
+        <h5>Course codes</h5>
         <div class="row">
           <div class="col-4">
             <div class="input-group mb-3">
@@ -154,8 +191,10 @@
               <input
                 type="text"
                 class="form-control"
-                name="sCode1"
+                name="code1"
                 aria-describedby="basic-addon1"
+                maxlength="50"
+                id="id_code1"
               />
             </div>
           </div>
@@ -167,8 +206,10 @@
               <input
                 type="text"
                 class="form-control"
-                name="sCode2"
+                name="code2"
                 aria-describedby="basic-addon1"
+                maxlength="50"
+                id="id_code2"
               />
             </div>
           </div>
@@ -180,8 +221,10 @@
               <input
                 type="text"
                 class="form-control"
-                name="sCode3"
+                name="code3"
                 aria-describedby="basic-addon1"
+                maxlength="50"
+                id="id_code3"
               />
             </div>
           </div>
@@ -193,8 +236,10 @@
               <input
                 type="text"
                 class="form-control"
-                name="sCode4"
+                name="code4"
                 aria-describedby="basic-addon1"
+                maxlength="50"
+                id="id_code4"
               />
             </div>
           </div>
@@ -206,11 +251,14 @@
               <input
                 type="text"
                 class="form-control"
-                name="sCode5"
+                name="code5"
                 aria-describedby="basic-addon1"
+                maxlength="50"
+                id="id_code5"
               />
             </div>
           </div>
+
           <div class="col-4">
             <div class="input-group mb-3">
               <div class="input-group-prepend">
@@ -219,11 +267,14 @@
               <input
                 type="text"
                 class="form-control"
-                name="sCode6"
+                name="code6"
                 aria-describedby="basic-addon1"
+                maxlength="50"
+                id="id_code6"
               />
             </div>
           </div>
+
           <div class="col-4">
             <div class="input-group mb-3">
               <div class="input-group-prepend">
@@ -232,11 +283,14 @@
               <input
                 type="text"
                 class="form-control"
-                name="sCode7"
+                name="code7"
                 aria-describedby="basic-addon1"
+                maxlength="50"
+                id="id_code7"
               />
             </div>
           </div>
+
           <div class="col-4">
             <div class="input-group mb-3">
               <div class="input-group-prepend">
@@ -245,11 +299,14 @@
               <input
                 type="text"
                 class="form-control"
-                name="sCode8"
+                name="code8"
                 aria-describedby="basic-addon1"
+                maxlength="50"
+                id="id_code8"
               />
             </div>
           </div>
+
           <div class="col-4">
             <div class="input-group mb-3">
               <div class="input-group-prepend">
@@ -258,13 +315,73 @@
               <input
                 type="text"
                 class="form-control"
-                name="sCode9"
+                name="code9"
                 aria-describedby="basic-addon1"
+                maxlength="50"
+                id="id_code9"
               />
             </div>
           </div>
         </div>
-        <h4>Personal Information</h4>
+
+        <h5>Last Semester Information</h5>
+        <div class="row">
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"
+                  >Last semester</span
+                >
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="last_semester"
+                aria-describedby="basic-addon1"
+                maxlength="50"
+                required
+                id="id_last_semester"
+              />
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"
+                  >Passing Year</span
+                >
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="passing_year"
+                aria-describedby="basic-addon1"
+                maxlength="50"
+                required
+                id="id_passing_year"
+              />
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Result</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="result"
+                aria-describedby="basic-addon1"
+                maxlength="50"
+                required
+                id="id_result"
+              />
+            </div>
+          </div>
+        </div>
+
+        <h3>Personal Information</h3>
         <div class="row">
           <div class="col-6">
             <div class="input-group mb-3">
@@ -276,9 +393,13 @@
                 class="form-control"
                 name="name"
                 aria-describedby="basic-addon1"
+                maxlength="200"
+                required
+                id="id_name"
               />
             </div>
           </div>
+
           <div class="col-6">
             <div class="input-group mb-3">
               <div class="input-group-prepend">
@@ -289,11 +410,15 @@
               <input
                 type="text"
                 class="form-control"
-                name="fOrHName"
+                name="father"
                 aria-describedby="basic-addon1"
+                maxlength="200"
+                required
+                id="id_father"
               />
             </div>
           </div>
+
           <div class="col-6">
             <div class="input-group mb-3">
               <div class="input-group-prepend">
@@ -304,6 +429,9 @@
                 class="form-control"
                 name="mother"
                 aria-describedby="basic-addon1"
+                maxlength="200"
+                required
+                id="id_mother"
               />
             </div>
           </div>
@@ -317,10 +445,13 @@
                 class="form-control"
                 name="guardian"
                 aria-describedby="basic-addon1"
+                maxlength="200"
+                required
+                id="id_guardian"
               />
             </div>
           </div>
-          <div class="col-8">
+          <!-- <div class="col-8">
             <div class="input-group mb-3">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"
@@ -334,61 +465,8 @@
                 aria-describedby="basic-addon1"
               />
             </div>
-          </div>
-          <div class="col-4">
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">Village</span>
-              </div>
-              <input
-                type="text"
-                class="form-control"
-                name="village"
-                aria-describedby="basic-addon1"
-              />
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1"
-                  >Post Address</span
-                >
-              </div>
-              <input
-                type="text"
-                class="form-control"
-                name="postAddress"
-                aria-describedby="basic-addon1"
-              />
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">PS</span>
-              </div>
-              <input
-                type="text"
-                class="form-control"
-                name="ps"
-                aria-describedby="basic-addon1"
-              />
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">District</span>
-              </div>
-              <input
-                type="text"
-                class="form-control"
-                name="dist"
-                aria-describedby="basic-addon1"
-              />
-            </div>
-          </div>
+          </div> -->
+
           <div class="col-4">
             <div class="input-group mb-3">
               <div class="input-group-prepend">
@@ -399,6 +477,9 @@
                 class="form-control"
                 name="phone"
                 aria-describedby="basic-addon1"
+                maxlength="50"
+                required
+                id="id_phone"
               />
             </div>
           </div>
@@ -412,8 +493,11 @@
               <input
                 type="text"
                 class="form-control"
-                name="bDate"
+                name="birth_date"
                 aria-describedby="basic-addon1"
+                maxlength=""
+                required
+                id="id_birth_date"
               />
             </div>
           </div>
@@ -429,6 +513,9 @@
                 class="form-control"
                 name="nationality"
                 aria-describedby="basic-addon1"
+                maxlength="200"
+                required
+                id="id_nationality"
               />
             </div>
           </div>
@@ -442,10 +529,84 @@
                 class="form-control"
                 name="religion"
                 aria-describedby="basic-addon1"
+                maxlength="200"
+                required
+                id="id_religion"
               />
             </div>
           </div>
         </div>
+        <!-- --------------------- -->
+        <h5>Permenant Address</h5>
+        <div class="row">
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Village</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="village"
+                aria-describedby="basic-addon1"
+                maxlength="200"
+                required
+                id="id_village"
+              />
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"
+                  >Post office</span
+                >
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="post_office"
+                aria-describedby="basic-addon1"
+                maxlength="200"
+                required
+                id="id_post_office"
+              />
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Upazila</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="upazila"
+                aria-describedby="basic-addon1"
+                maxlength="200"
+                required
+                id="id_upazila"
+              />
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">District</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="district"
+                aria-describedby="basic-addon1"
+                maxlength="200"
+                required
+                id="id_district"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- ----------------------------------- -->
         <div class="d-flex justify-content-center">
           <button class="btn btn-primary" type="submit">Submit</button>
         </div>
