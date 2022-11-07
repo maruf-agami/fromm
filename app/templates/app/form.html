@@ -35,7 +35,8 @@
     </div> -->
 
     <div class="container" style="height: 900px">
-      <form id="examForm">
+      <form id="examForm" method="post">
+        {% csrf_token %}
         <h4>Academic Information</h4>
         <div class="row">
           <div class="col-4">
@@ -46,6 +47,8 @@
                 placeholder="হল"
                 name="hall"
                 aria-describedby="basic-addon1"
+                required
+                id="id_hall"
               />
             </div>
           </div>
@@ -55,8 +58,11 @@
                 type="text"
                 class="form-control"
                 placeholder="শ্রেণী রোল নং"
-                name="roll"
                 aria-describedby="basic-addon1"
+                name="student_id"
+                maxlength="200"
+                required=""
+                id="id_student_id"
               />
             </div>
           </div>

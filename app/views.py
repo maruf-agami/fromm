@@ -32,7 +32,7 @@ def add_formfillup(request):
 			return redirect(reverse('index'))
 	else:
 		form = FormfillupForm()
-	return render(request, 'app/add_formfillup.html', {'form': form})
+	return render(request, 'app/form.html', {'form': form})
 
 
 
