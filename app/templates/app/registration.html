@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <style>
+      .cbg-dark {
+        color: aqua;
+      }
+      #side-drawer {
+        height: 100vh;
+        width: 336px; /* Reference: https://forums.envato.com/t/standard-sidebar-width/75633 */
+        z-index: 1032; /* z-index of standard bootstrap navbar is 1030 + 1 offset due to side-drawer-void */
+        top: 0;
+        left: -336px;
+        transition: left 0.25s ease;
+      }
+
+      #side-drawer-void {
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1031; /* z-index of standard bootstrap navbar is 1030 */
+        background: rgba(0, 0, 0, 0.6);
+      }
+    </style>
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="container my-5 w-25 shadow p-3 mb-5 bg-light rounded">
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Your Full Name</label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Enter your name here"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Your Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Enter your email here"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Your Depertment</label>
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            placeholder="Enter your depertment name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Your Subject</label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Enter your subject here"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Your ID</label>
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            placeholder="Enter your ID here"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Your phone number</label>
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            placeholder="Enter your phone number here"
+          />
+        </div>
+
+        <a href="/dashboard.html" class="btn btn-primary">Create Account</a>
+        <a class="d-block" href="/index.html">Already Registered?</a>
+      </form>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    
+  </body>
+</html>

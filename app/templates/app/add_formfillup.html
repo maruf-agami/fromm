@@ -1,0 +1,163 @@
+{% extends 'app/base.html' %} {% block title %} Add Item - aBay {% endblock %}
+{% block content %}
+
+<!-- no more gooling how to center a div; here comes the flexbox -->
+<div class="d-md-flex justify-content-center">
+  <form method="post">
+    {% csrf_token %}
+    <p>
+      <label for="id_name">Name:</label>
+      <input type="text" name="name" maxlength="200" required="" id="id_name" />
+    </p>
+
+    <p>
+      <label for="id_phone">Phone:</label>
+      <input
+        type="text"
+        name="phone"
+        maxlength="50"
+        required=""
+        id="id_phone"
+      />
+    </p>
+
+    <p>
+      <label for="id_father">Father/Husband:</label>
+      <input
+        type="text"
+        name="father"
+        maxlength="200"
+        required=""
+        id="id_father"
+      />
+    </p>
+
+    <p>
+      <label for="id_mother">Mother:</label>
+      <input
+        type="text"
+        name="mother"
+        maxlength="200"
+        required=""
+        id="id_mother"
+      />
+    </p>
+
+    <p>
+      <label for="id_guardian">Guardian:</label>
+      <input
+        type="text"
+        name="guardian"
+        maxlength="200"
+        required=""
+        id="id_guardian"
+      />
+    </p>
+
+    <p>
+      <label for="id_village">Village:</label>
+      <input
+        type="text"
+        name="village"
+        maxlength="200"
+        required=""
+        id="id_village"
+      />
+    </p>
+
+    <p>
+      <label for="id_post_office">Post office:</label>
+      <input
+        type="text"
+        name="post_office"
+        maxlength="200"
+        required=""
+        id="id_post_office"
+      />
+    </p>
+
+    <p>
+      <label for="id_upazila">Upazila:</label>
+      <input
+        type="text"
+        name="upazila"
+        maxlength="200"
+        required=""
+        id="id_upazila"
+      />
+    </p>
+
+    <p>
+      <label for="id_district">District:</label>
+      <input
+        type="text"
+        name="district"
+        maxlength="200"
+        required=""
+        id="id_district"
+      />
+    </p>
+
+    <p>
+      <label for="id_Birth Date">Birth Date:</label>
+      <input type="text" name="Birth Date" id="id_Birth Date" />
+    </p>
+
+    <p>
+      <label for="id_student_id">Student ID:</label>
+      <input
+        type="text"
+        name="student_id"
+        maxlength="200"
+        required=""
+        id="id_student_id"
+      />
+    </p>
+
+    <p>
+      <label for="id_session">Session:</label>
+      <input
+        type="text"
+        name="session"
+        maxlength="50"
+        required=""
+        id="id_session"
+      />
+    </p>
+
+    <p>
+      <label for="id_semester">Semester:</label>
+      <input
+        type="text"
+        name="semester"
+        maxlength="50"
+        required=""
+        id="id_semester"
+      />
+    </p>
+
+    <p>
+      <!-- <label for="id_hall">Hall:</label> -->
+      <!-- <input type="text" name="hall" maxlength="200" required="" id="id_hall" /> -->
+
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="হল"
+                name="hall"
+				maxlength="200"
+                aria-describedby="basic-addon1"
+				required
+				id="id_hall"
+              />
+            </div>
+          </div>
+
+    </p>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+{% endblock %}
