@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo</title>
+    <title>Student Forms</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -55,10 +55,13 @@
     </div>
     <h1 class="text-center my-5">Administration Dashboard</h1>
     <div class="container my-5">
-      <table
+      <!-- <table
         class="table table-hover"
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
+      > -->
+      <table
+        class="table table-hover"
       >
         <thead>
           <tr>
@@ -70,47 +73,35 @@
             <th scope="col">Previous Result</th>
             <th scope="col">Residence</th>
             <th scope="col">Phone</th>
-            <th class="text-center" scope="col">Exam Eligibility</th>
-            <th class="text-center" scope="col">Status</th>
+            <th scope="col">payable_amount</th>
+            <th class="text-center" scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>45674578</td>
-            <td>Akram Shah</td>
-            <td>Engineering</td>
-            <td>CSE-311, STA-211</td>
-            <td class="text-center">3.45</td>
-            <td>Residence</td>
-            <td>0183254585</td>
-            <td class="text-center">No</td>
-            <td><button class="btn btn-primary">Permitted</button></td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>87642786</td>
-            <td>Ahmed Sabab</td>
-            <td>Science</td>
-            <td>CSE-311, STA-211</td>
-            <td class="text-center">2.99</td>
-            <td>Non Residence</td>
-            <td>0183254585</td>
-            <td class="text-center">Yes</td>
-            <td><button class="btn btn-warning">Not Permitted</button></td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>78978545</td>
-            <td>Rokib Uddin</td>
-            <td>Science</td>
-            <td>CSE-311, STA-211</td>
-            <td class="text-center">3.16</td>
-            <td>Residence</td>
-            <td>0183254585</td>
-            <td class="text-center">No</td>
-            <td><button class="btn btn-primary">Permitted</button></td>
-          </tr>
+          {% for form in forms %}
+            <tr>
+              <th scope="row">{{ forloop.counter }}</th>
+              <td>{{form.student_id}}</td>
+              <td>{{form.name}}</td>
+              <td>{{form.department}}</td>
+              <td>{{form.code1}}, {{form.code1}}, {{form.code1}} </td>
+              <td class="text-center">{{form.result}}</td>
+              <td>{{form.hall}}</td>
+              <td>{{form.phone}}</td>
+              <td>{{form.payable_amount}}</td>
+              <td>
+                <a href="{% url 'add_payment' form.id %}">
+                <button type="button" class="btn btn-primary">
+                  {% if form.payable_amount %}
+                    Edit fee
+                  {% else %}
+                    Enter fee
+                  {% endif %}
+                </button>
+                </a>
+              </td>
+            </tr>
+          {% endfor %}
         </tbody>
       </table>
     </div>
@@ -140,13 +131,125 @@
               <form action="" method="post">
                 <div class="mb-3">
                   <label for="exampleFormControlInput1" class="form-label"
-                    >Payble</label
+                    >Student Id</label
                   >
                   <input
-                    type="number"
+                    type="email"
                     class="form-control"
                     id="exampleFormControlInput1"
-                    placeholder="Student has to pay"
+                    placeholder="Enter your ID"
+                    value="45215458"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label"
+                    >Student Name</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="Enter your name"
+                    value="Hasabat Siam"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlTextarea1" class="form-label"
+                    >Course Codes</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="exampleFormControlTextarea1"
+                    rows="3"
+                    placeholder="Enter your course codes. Ex: CSE-221, EEE-122"
+                    value="CSE-221, EEE-122"
+                  ></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label"
+                    >Department</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="Enter your depertment name"
+                    value="Engineering"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label"
+                    >Session</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="Enter your session"
+                    value="2016-2017"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label"
+                    >PSR</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="Enter you previous result"
+                    value="3.45"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label"
+                    >Residence</label
+                  >
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Residence
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault2"
+                      checked
+                    />
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      Non Rasidence
+                    </label>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label"
+                    >Phone</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="Enter your phone"
+                    value="0183548547"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label"
+                    >Attendance</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="Enter Student Attendance"
                   />
                 </div>
                 <div class="mb-3">

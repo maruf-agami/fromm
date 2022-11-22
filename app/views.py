@@ -13,12 +13,14 @@ from .forms import FormfillupForm
 def index(request):
 	user = request.user
 	if user.is_staff and user.username == 'mannan':
-		forms = Formfillup.objects.all()
+		forms = Formfillup.objects.filter(step=1)
 		return render(request, 'app/deptDashboard.html', {'forms': forms})
 	if user.is_staff and user.username == 'provost':
-		return render(request, 'app/hallDashboard.html')
+		forms = Formfillup.objects.filter(step=2)
+		return render(request, 'app/hallDashboard.html', {'forms': forms})
 	if user.is_staff and user.username == 'register':
-		return render(request, 'app/adminDashboard.html')
+		forms = Formfillup.objects.filter(step=3)
+		return render(request, 'app/adminDashboard.html', {'forms': forms})
 	return render(request, 'app/dashboard.html')
     # return HttpResponse('hello world!')
 
@@ -40,3 +42,20 @@ def add_formfillup(request):
 def view_form(request):
     forms = Formfillup.objects.all()
     return render(request, 'app/form_list.html', {'forms': forms})
+
+def change_step(request, form_id):
+	form = Formfillup.objects.filter(id=form_id).last()
+	form.step = int(form.step) + 1
+	form.save()
+	return redirect('index')
+
+
+def add_payment(request, form_id):
+	form = Formfillup.objects.filter(id=form_id).last()
+	if request.method == 'POST':
+		amount = request.POST.get('amount')
+		form = Formfillup.objects.filter(id=form_id).last()
+		form.payable_amount = float(amount)
+		form.save()
+		return redirect('index')
+	return render(request, 'app/add_amount.html', {'form': form})

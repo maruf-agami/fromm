@@ -87,7 +87,13 @@
               <td class="text-center">{{form.result}}</td>
               <td>{{form.hall}}</td>
               <td>{{form.phone}}</td>
-              <td><button type="button" class="btn btn-primary">Send to hall</button></td>
+              <td>
+                <a href="{% url 'send' form.id %}">
+                <button type="button" class="btn btn-primary">
+                  Send to hall
+                </button>
+                </a>
+              </td>
             </tr>
           {% endfor %}
         </tbody>

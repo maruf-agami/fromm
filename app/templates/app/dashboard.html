@@ -63,8 +63,8 @@
       <div class="card" style="width: 20rem">
         <img src="/images/profile.jpg" class="card-img-top" alt="..." />
         <div class="card-body">
-          <h4 class="card-title">Junayed Hassan</h4>
-          <h4>ID: 52475896</h4>
+          <h4 class="card-title">{{ request.user.fullname }}</h4>
+          <h4>ID: {{</h4>
           <h4>Dept: CSE</h4>
           <h4>Session: 2016-17</h4>
         </div>
@@ -227,46 +227,6 @@
     </div>
 
     <h1 class="text-center my-5">Student Dashboard</h1>
-    <div class="container my-5">
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">Sl</th>
-            <th scope="col">ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">Depertment</th>
-            <th scope="col">Subject</th>
-            <th class="text-center" scope="col">Exam Eligibility</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>45674578</td>
-            <td>Hasanat Siam</td>
-            <td>Engineering</td>
-            <td>CSE</td>
-            <td class="text-center">No</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>87642786</td>
-            <td>MD Shihab</td>
-            <td>Science</td>
-            <td>Biology</td>
-            <td class="text-center">Yes</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>78978545</td>
-            <td>Maruf Bin Solaiman</td>
-            <td>Science</td>
-            <td>Chemistry</td>
-            <td class="text-center">No</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
