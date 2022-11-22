@@ -9,30 +9,34 @@ from .forms import FormfillupForm
 
 # Create your views here.
 
+
 def index(request):
-    user = request.user
-    if user.is_staff and user.username == 'mannan':
-        return render(request, 'app/deptDashboard.html')
-    if user.is_staff and user.username == 'provost':
-        return render(request, 'app/hallDashboard.html')
-    if user.is_staff and user.username == 'register':
-        return render(request, 'app/adminDashboard.html')
-    return render(request, 'app/dashboard.html')
+	user = request.user
+	if user.is_staff and user.username == 'mannan':
+		forms = Formfillup.objects.all()
+		return render(request, 'app/deptDashboard.html', {'forms': forms})
+	if user.is_staff and user.username == 'provost':
+		return render(request, 'app/hallDashboard.html')
+	if user.is_staff and user.username == 'register':
+		return render(request, 'app/adminDashboard.html')
+	return render(request, 'app/dashboard.html')
     # return HttpResponse('hello world!')
 
 
 @login_required(login_url='/app/')
 def add_formfillup(request):
-	if request.method == 'POST':
-		form = FormfillupForm(request.POST)
-		if form.is_valid():
-			p = form.save(commit=False)
-			p.user = request.user
-			p.save()
-			return redirect(reverse('index'))
-	else:
-		form = FormfillupForm()
-	return render(request, 'app/form.html', {'form': form})
+    if request.method == 'POST':
+        form = FormfillupForm(request.POST)
+        if form.is_valid():
+            p = form.save(commit=False)
+            p.user = request.user
+            p.save()
+            return redirect(reverse('index'))
+    else:
+        form = FormfillupForm()
+    return render(request, 'app/form.html', {'form': form})
 
 
-
+def view_form(request):
+    forms = Formfillup.objects.all()
+    return render(request, 'app/form_list.html', {'forms': forms})
