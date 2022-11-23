@@ -19,42 +19,14 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <!-- <h3 style="text-align: center">চট্টগ্রাম বিশ্ববিদ্যালয়</h3>
-    <div class="d-flex justify-content-center align-items-center">
-      <div>
-        <img
-          width="80"
-          src="https://upload.wikimedia.org/wikipedia/en/8/86/University_of_Chittagong_logo.svg"
-          alt=""
-        />
-      </div>
-    </div>
-    <div>
-      <span>২০</span>
-
-    </div> -->
+  
 
     <div class="container" style="height: 900px">
       <form method="post">
         {% csrf_token %}
         <h3>Academic Information</h3>
         <div class="row">
-          <!-- old one -->
-          <!-- <div class="col-4">
-            <div class="input-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Hall"
-                name="hall"
-                aria-describedby="basic-addon1"
-                required
-                id="id_hall"
-              />
-            </div>
-          </div> -->
-
-          <!-- new one -->
+ 
           <div class="col-4">
             <div class="input-group mb-3">
               <div class="input-group-prepend">
@@ -597,6 +569,7 @@
         <!-- ----------------------------------- -->
         <div class="d-flex justify-content-center">
           <button class="btn btn-primary" type="submit">Submit</button>
+          <button class="btn btn-primary ml-2" id="static"  type="button">Static Data</button>
         </div>
       </form>
     </div>
@@ -627,6 +600,43 @@
         );
         console.log(json);
       });
+
+      document.getElementById('static').addEventListener('click', () => {
+        document.getElementById('id_student_id').value='17701015'
+        document.getElementById('id_semester').value='6th'
+        document.getElementById('id_session').value='2016-17'
+        document.getElementById('id_hall').value='Shaheed Abdur Rab'
+        document.getElementById('id_exam_starting_date').value='10/10/2022'
+        document.getElementById('id_code1').value='CSE 611'
+        document.getElementById('id_code2').value='CSE 612'
+        document.getElementById('id_code3').value='CSE 613'
+        document.getElementById('id_code4').value='CSE 614'
+        document.getElementById('id_code5').value='CSE 615'
+        document.getElementById('id_code6').value='CSE 616'
+        document.getElementById('id_code7').value='CSE 617'
+        document.getElementById('id_code8').value='CSE 618'
+        document.getElementById('id_code9').value='CSE 619'
+        document.getElementById('id_last_semester').value='5th'
+        document.getElementById('id_passing_year').value='2021'
+        document.getElementById('id_result').value='3.23'
+        document.getElementById('id_name').value='Wasim Shiek'
+        document.getElementById('id_father').value='Roman Shiek'
+        document.getElementById('id_mother').value='Romana Shiek'
+        document.getElementById('id_guardian').value='Roman Shiek'
+        document.getElementById('id_phone').value='+8801731551365'
+        document.getElementById('id_birth_date').value='10/10/10'
+        document.getElementById('id_nationality').value='Bangladeshi'
+        document.getElementById('id_religion').value='Islam'
+        document.getElementById('id_village').value='Zobra'
+        document.getElementById('id_upazila').value='Hathazari'
+        document.getElementById('id_district').value='Chittagong'
+        document.getElementById('id_department').value='CSE'
+        document.getElementById('id_exam_year').value='2022'
+        document.getElementById('id_post_office').value='CU'
+
+
+      })
     </script>
+
   </body>
 </html>

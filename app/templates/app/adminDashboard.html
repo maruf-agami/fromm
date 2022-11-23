@@ -67,8 +67,13 @@
           <td>{{form.phone}}</td>
           <td>{{form.payable_amount}}</td>
           <td>
+            <a href="/app/templates/app/final_form.html">
+              <button type="button" class="btn btn-info">
+                View
+              </button>
+            </a>
             <a href="{% url 'add_payment' form.id %}">
-              <button type="button" class="btn btn-primary">
+              <button type="button" class="btn btn-success">
                 {% if form.payable_amount %}
                 Edit fee
                 {% else %}
@@ -82,11 +87,11 @@
       </tbody>
     </table>
   </div>
-  <div class="my-5">
+  <!-- <div class="my-5"> -->
     <!-- Button trigger modal -->
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -166,7 +171,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

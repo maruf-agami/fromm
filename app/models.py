@@ -72,4 +72,4 @@ class Formfillup(models.Model):
 
     district = models.CharField(max_length=200, verbose_name='district', default='')
 
-    # TODO: ekhan theke aro add kor field ja ja lagbe..
+    

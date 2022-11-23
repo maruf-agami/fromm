@@ -30,198 +30,77 @@
               <!-- <a class="nav-link active" aria-current="page" href="/dashboard.html">Sign out</a> -->
               <a href="/accounts/logout/" role="button" class="btn btn-outline-danger">Sign out</a>
             </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="deptDashboard.html">Department</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/adminDashboard.html">Admin</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/hallDashboard.html">Hall</a>
-            </li> -->
+
           </ul>
         </div>
       </div>
     </nav>
   </div>
-  <!-- <div class="text-center">
-      <img
-        src="/images/profile.jpg"
-        class="rounded-5 img-fluid"
-        alt="..."
-        width="150"
-      />
-    </div> -->
-  <div class="d-flex justify-content-center">
-    <div class="card" style="width: 20rem">
-      <img src="/images/profile.jpg" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h4 class="card-title">{{ request.user.fullname }}</h4>
-        <h4>ID: {{</h4>
-        <h4>Dept: CSE</h4>
-        <h4>Session: 2016-17</h4>
+
+
+
+
+
+  <div class="d-flex flex-row align-items-center justify-content-center">
+    <div class="container card w-75 p-5">
+      <div class="row d-flex align-items-center justify-content-center my-5">
+        <div style="width: 100px;height: 100px; border-radius: 50%;background-color: blueviolet;">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <p class="fs-4 text-muted">Username: <span class="text-dark fs-3">Siam2547</span></p>
+        </div>
+        <div class="col-sm">
+          <p class="fs-4 text-muted">Email address: <span class="text-dark fs-3">hasnat@gmail.com</span></p>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <p class="fs-4 text-muted">Student ID: <span class="text-dark fs-3">17701106</span></p>
+        </div>
+        <div class="col-sm">
+          <p class="fs-4 text-muted">Full name: <span class="text-dark fs-3">Hasanat Siam</span></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <p class="fs-4 text-muted">Semester: <span class="text-dark fs-3">6th</span></p>
+        </div>
       </div>
     </div>
   </div>
+
+
+
   <div class="my-5">
-    <!-- Button trigger modal -->
     <div class="text-center">
-      <!-- <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal"> -->
-      <!-- Form Fillup -->
       <a href="/add_formfillup" role="button" class="btn btn-outline-success">Form Fillup</a>
-      <!-- </button> -->
     </div>
-    <!-- Modal -->
-    <!-- <div
-        class="modal fade"
-        id="exampleModal"
-        tabindex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <form action="" method="post">
-                <div class="mb-3">
-                  <label for="exampleFormControlInput1" class="form-label"
-                    >Student Id</label
-                  >
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="exampleFormControlInput1"
-                    placeholder="Enter your ID"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="exampleFormControlInput1" class="form-label"
-                    >Student Name</label
-                  >
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="exampleFormControlInput1"
-                    placeholder="Enter your name"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="exampleFormControlTextarea1" class="form-label"
-                    >Course Codes</label
-                  >
-                  <textarea
-                    class="form-control"
-                    id="exampleFormControlTextarea1"
-                    rows="3"
-                    placeholder="Enter your course codes. Ex: CSE-221, EEE-122"
-                  ></textarea>
-                </div>
-                <div class="mb-3">
-                  <label for="exampleFormControlInput1" class="form-label"
-                    >Department</label
-                  >
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="exampleFormControlInput1"
-                    placeholder="Enter your depertment name"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="exampleFormControlInput1" class="form-label"
-                    >Session</label
-                  >
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="exampleFormControlInput1"
-                    placeholder="Enter your session"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="exampleFormControlInput1" class="form-label"
-                    >PSR</label
-                  >
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="exampleFormControlInput1"
-                    placeholder="Enter you previous result"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="exampleFormControlInput1" class="form-label"
-                    >PSR</label
-                  >
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="flexRadioDefault"
-                      id="flexRadioDefault1"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                      Residence
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="flexRadioDefault"
-                      id="flexRadioDefault2"
-                      checked
-                    />
-                    <label class="form-check-label" for="flexRadioDefault2">
-                      Non Rasidence
-                    </label>
-                  </div>
-                </div>
-                <div class="mb-3">
-                  <label for="exampleFormControlInput1" class="form-label"
-                    >Phone</label
-                  >
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="exampleFormControlInput1"
-                    placeholder="Enter your phone"
-                  />
-                </div>
+  </div>
 
-                <button type="button" class="btn btn-primary">Submit</button>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
+  <div class="d-flex flex-row align-items-center justify-content-center">
+    <div class="container card w-75 p-5">
+      <h3>Status</h3>
+      <p>Your form has been recieved by the department</p>
+    </div>
+  </div>
 
-    <h1 class="text-center my-5">Student Dashboard</h1>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-      crossorigin="anonymous"></script>
+  <div class="my-5">
+    <div class="text-center">
+      <a href="/payment" role="button" class="btn btn-outline-warning">Pay</a>
+    </div>
+  </div>
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
