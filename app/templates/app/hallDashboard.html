@@ -65,7 +65,7 @@
           <td>{{form.hall}}</td>
           <td>{{form.phone}}</td>
           <td>
-            <a href="/app/templates/app/final_form.html">
+            <a href="{% url 'view_final_form'  form.id %}">
               <button type="button" class="btn btn-primary">
                 View
               </button>
