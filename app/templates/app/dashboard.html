@@ -49,24 +49,24 @@
       </div>
       <div class="row">
         <div class="col-sm">
-          <p class="fs-4 text-muted">Username: <span class="text-dark fs-3">Siam2547</span></p>
+          <p class="fs-4 text-muted">Username: <span class="text-dark fs-3">{{ request.user.username }}</span></p>
         </div>
         <div class="col-sm">
-          <p class="fs-4 text-muted">Email address: <span class="text-dark fs-3">hasnat@gmail.com</span></p>
+          <p class="fs-4 text-muted">Email address: <span class="text-dark fs-3">{{ request.user.email }}</span></p>
         </div>
 
       </div>
       <div class="row">
         <div class="col-sm">
-          <p class="fs-4 text-muted">Student ID: <span class="text-dark fs-3">17701106</span></p>
+          <p class="fs-4 text-muted">Student ID: <span class="text-dark fs-3">{{ request.user.student_id }}</span></p>
         </div>
         <div class="col-sm">
-          <p class="fs-4 text-muted">Full name: <span class="text-dark fs-3">Hasanat Siam</span></p>
+          <p class="fs-4 text-muted">Full name: <span class="text-dark fs-3">{{ request.user.fullname }}</span></p>
         </div>
       </div>
       <div class="row">
         <div class="col-sm">
-          <p class="fs-4 text-muted">Semester: <span class="text-dark fs-3">6th</span></p>
+          <p class="fs-4 text-muted">Semester: <span class="text-dark fs-3">{{ request.user.semester }}</span></p>
         </div>
       </div>
     </div>
@@ -83,16 +83,28 @@
   <div class="d-flex flex-row align-items-center justify-content-center">
     <div class="container card w-75 p-5">
       <h3>Status</h3>
-      <p>Your form has been recieved by the department</p>
+      <p>Your form has been recieved by the 
+        {% if  form.step == 1 %}
+          department
+        {% elif form.step == 2 %}
+          hall
+        {% elif form.step == 3 %}
+          Administration office
+        {% else %}
+          Your form is successfully accepted.
+        {% endif %}
+        </p>
     </div>
   </div>
 
 
-  <div class="my-5">
-    <div class="text-center">
-      <a href="/payment" role="button" class="btn btn-outline-warning">Pay</a>
+  {% if  form.step == 4 %}
+    <div class="my-5">
+      <div class="text-center">
+        <a href="/payment" role="button" class="btn btn-outline-warning">Pay</a>
+      </div>
     </div>
-  </div>
+  {% endif %}
 
 
 

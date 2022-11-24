@@ -9,4 +9,5 @@ urlpatterns = [
     path('forms', views.view_form, name='view_form'),
     path('send/<int:form_id>', views.change_step, name='send'),
     path('add_payment/<int:form_id>', views.add_payment, name='add_payment'),
+    path('view/form/<int:form_id>', views.view_final_form, name="view_final_form"),
 ]

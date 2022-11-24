@@ -9,7 +9,7 @@ from .forms import FormfillupForm
 
 # Create your views here.
 
-
+@login_required
 def index(request):
 	user = request.user
 	if user.is_staff and user.username == 'mannan':
@@ -21,7 +21,14 @@ def index(request):
 	if user.is_staff and user.username == 'register':
 		forms = Formfillup.objects.filter(step=3)
 		return render(request, 'app/adminDashboard.html', {'forms': forms})
-	return render(request, 'app/dashboard.html')
+
+	# for user
+	form = ''
+	if request.user.is_authenticated:
+		form = Formfillup.objects.filter(user=request.user).last()
+	
+	print(form)
+	return render(request, 'app/dashboard.html', {'form': form})
     # return HttpResponse('hello world!')
 
 
@@ -59,3 +66,12 @@ def add_payment(request, form_id):
 		form.save()
 		return redirect('index')
 	return render(request, 'app/add_amount.html', {'form': form})
+
+
+def view_final_form(request, form_id):
+	# database query
+	form = Formfillup.objects.filter(id=form_id).last()
+	if form:
+		return render(request, 'app/final_form.html', {'form': form})
+	else:
+		return redirect('index')
